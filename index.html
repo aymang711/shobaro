@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>html{background:#0d0d0d;}</style>
+  <title>על האש לשובארו | תפריט</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background: #0d0d0d;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #0d0d0d;
+      color: #f0e6d3;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 70px 20px 50px;
+      background: linear-gradient(160deg, #1a0a00 0%, #0d0d0d 60%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,100,0,0.18) 0%, transparent 70%);
+    }
+    .flame-row {
+      font-size: 2.4rem;
+      letter-spacing: 6px;
+      margin-bottom: 14px;
+      animation: flicker 2.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%   { opacity: 1; text-shadow: 0 0 20px #ff6600, 0 0 40px #ff3300; }
+      100% { opacity: 0.82; text-shadow: 0 0 10px #ff9900, 0 0 28px #ff5500; }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ff9900, #ff4400, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+    .hero .subtitle {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #c8a882;
+      letter-spacing: 4px;
+      position: relative;
+    }
+    .divider {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff6600, transparent);
+      margin: 22px auto;
+    }
+
+    /* ─── LAYOUT ─── */
+    .menu-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      margin-bottom: 48px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ff8833;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,136,51,0.25);
+    }
+    .section-title .icon { font-size: 1.6rem; }
+
+    /* ─── CARDS ─── */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .item-card {
+      background: linear-gradient(145deg, #1c1208, #110d08);
+      border: 1px solid rgba(255,120,0,0.15);
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .item-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,120,0,0.45);
+      box-shadow: 0 8px 30px rgba(255,80,0,0.12);
+    }
+    .item-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f5dfc0;
+      margin-bottom: 5px;
+    }
+    .item-desc {
+      font-size: 0.82rem;
+      color: #9a8070;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .item-price {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ff7700;
+    }
+    .item-weight {
+      font-size: 0.78rem;
+      color: #7a6858;
+      background: rgba(255,255,255,0.05);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    /* ─── FULL-WIDTH ITEM ─── */
+    .items-list .item-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .items-list .item-card .item-info { flex: 1; }
+
+    /* ─── NOTE ─── */
+    .note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.88rem;
+      color: #6a5848;
+      border-top: 1px solid #1e1510;
+      padding-top: 22px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,100,0,0.12);
+      border: 1px solid rgba(255,100,0,0.3);
+      color: #ff8833;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="flame-row">🔥 🥩 🔥</div>
+  <h1>על האש לשובארו</h1>
+  <p class="subtitle">סטייקייה • גריל • בשרים</p>
+  <div class="divider"></div>
+</div>
+
+<div class="menu-wrapper">
+
+  <!-- ── מנות ראשונות ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🥗</span> מנות ראשונות</div>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-name">סלט ירוק עם גבינת פטה</div>
+        <div class="item-desc">ירקות טריים, שקדים קלויים, רוטב חרדל-דבש</div>
+        <div class="item-footer">
+          <span class="item-price">₪38</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">נקניקיות גריל מיני</div>
+        <div class="item-desc">6 נקניקיות מעושנות על האש עם ממרח חרדל חריף</div>
+        <div class="item-footer">
+          <span class="item-price">₪42</span>
+          <span class="item-weight">6 יח'</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">כנפיים בגריל</div>
+        <div class="item-desc">כנפיים עם מרינדה חריפה-מתוקה, 500 גרם</div>
+        <div class="item-footer">
+          <span class="item-price">₪52</span>
+          <span class="item-weight">500 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">לחם שום על האש</div>
+        <div class="item-desc">לחם שיפון קלוי עם חמאת שום עשבי תיבול</div>
+        <div class="item-footer">
+          <span class="item-price">₪28</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── סטייקים ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🥩</span> סטייקים על האש</div>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-name">ריב איי <span class="badge">הבסט סלר</span></div>
+        <div class="item-desc">נתח עסיסי עם שיש טבעי, צלוי לשלמות</div>
+        <div class="item-footer">
+          <span class="item-price">₪148</span>
+          <span class="item-weight">300 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">פילה מיניון</div>
+        <div class="item-desc">הנתח הרך ביותר, עם רוטב פטריות יערות</div>
+        <div class="item-footer">
+          <span class="item-price">₪168</span>
+          <span class="item-weight">250 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">אנטריקוט ענק</div>
+        <div class="item-desc">400 גרם אנטריקוט, חתוך עבה, צלייה ישירה</div>
+        <div class="item-footer">
+          <span class="item-price">₪158</span>
+          <span class="item-weight">400 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">T-Bone</div>
+        <div class="item-desc">נתח מלכותי עם עצם, שני נתחים באחד</div>
+        <div class="item-footer">
+          <span class="item-price">₪188</span>
+          <span class="item-weight">500 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">סינטה פרמיום</div>
+        <div class="item-desc">סינטה בשלה בבריסקט, מוגשת עם רוטב BBQ</div>
+        <div class="item-footer">
+          <span class="item-price">₪128</span>
+          <span class="item-weight">300 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">סטייק בקר טריפל <span class="badge">חדש</span></div>
+        <div class="item-desc">שלושה מדליוני בקר עם חמאת עשבים</div>
+        <div class="item-footer">
+          <span class="item-price">₪178</span>
+          <span class="item-weight">350 גרם</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── מנות עוף ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🍗</span> עוף על האש</div>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-name">חזה עוף גריל</div>
+        <div class="item-desc">עוף טרי עם לימון ורוזמרין, צלוי על פחמים</div>
+        <div class="item-footer">
+          <span class="item-price">₪82</span>
+          <span class="item-weight">300 גרם</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">שיפוד עוף</div>
+        <div class="item-desc">קוביות עוף על שיפוד עם ירקות גריל ורוטב טחינה</div>
+        <div class="item-footer">
+          <span class="item-price">₪78</span>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">עוף שלם על האש</div>
+        <div class="item-desc">עוף שלם צלוי בשיטה האיטית, עם תבלינים ביתיים</div>
+        <div class="item-footer">
+          <span class="item-price">₪118</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── תוספות ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🍟</span> תוספות</div>
+    <div class="items-list">
+      <div class="item-card">
+        <div class="item-info">
+          <div class="item-name">צ'יפס ביתי</div>
+          <div class="item-desc">מטוגן עמוק, מוגש עם מיונז שום</div>
+        </div>
+        <div class="item-price">₪28</div>
+      </div>
+      <div class="item-card" style="margin-top:10px">
+        <div class="item-info">
+          <div class="item-name">אורז בסמטי</div>
+          <div class="item-desc">אורז מבושל עם חמאה ועשבי תיבול</div>
+        </div>
+        <div class="item-price">₪22</div>
+      </div>
+      <div class="item-card" style="margin-top:10px">
+        <div class="item-info">
+          <div class="item-name">ירקות גריל</div>
+          <div class="item-desc">פלפלים, זוקיני, בצל סגול, עגבניות שרי</div>
+        </div>
+        <div class="item-price">₪32</div>
+      </div>
+      <div class="item-card" style="margin-top:10px">
+        <div class="item-info">
+          <div class="item-name">תפו"א אפוי עם שמנת</div>
+        </div>
+        <div class="item-price">₪26</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── שתייה ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🥤</span> שתייה</div>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-name">קולה / ספרייט / פנטה</div>
+        <div class="item-footer"><span class="item-price">₪14</span><span class="item-weight">330ml</span></div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">מיץ טבעי סחוט</div>
+        <div class="item-desc">תפוז, לימון, אשכולית</div>
+        <div class="item-footer"><span class="item-price">₪22</span></div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">בירה שופת / גולדסטאר</div>
+        <div class="item-footer"><span class="item-price">₪28</span><span class="item-weight">500ml</span></div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">יין אדום / לבן (כוס)</div>
+        <div class="item-footer"><span class="item-price">₪38</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── קינוחים ── -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🍮</span> קינוחים</div>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-name">בראוניז שוקולד חם</div>
+        <div class="item-desc">מוגש עם גלידת וניל וקרם שנטי</div>
+        <div class="item-footer"><span class="item-price">₪42</span></div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">קרם ברולה</div>
+        <div class="item-desc">קלאסיקה צרפתית עם קרמל שרוף למעלה</div>
+        <div class="item-footer"><span class="item-price">₪38</span></div>
+      </div>
+      <div class="item-card">
+        <div class="item-name">גלידה 3 כדורים</div>
+        <div class="item-desc">בחירת טעמים: שוקולד, וניל, תות</div>
+        <div class="item-footer"><span class="item-price">₪34</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    כל המחירים כוללים מע"מ • הכנות מיוחדות לפי בקשה<br/>
+    🔥 על האש לשובארו — כי בשר טוב מגיע מהלב 🔥
+  </div>
+</div>
+
+</body>
+</html>
